@@ -1,0 +1,17 @@
+Algoritmo DFS(Grafo, origem)
+    Entrada: 
+        Grafo representado por uma lista de adjacência
+        origem: vértice de início da busca
+    Saída:
+        Visita todos os vértices alcançáveis a partir da origem em profundidade
+
+    Criar um conjunto ou vetor Visitado
+    
+    Chamar DFS_Visita(origem, Visitado)
+
+Procedimento DFS_Visita(v, Visitado)
+    Marcar v como visitado
+    Para cada vizinho u de v em Grafo[v]:
+        Se u não foi visitado:
+            Chamar DFS_Visita(u, Visitado)
+

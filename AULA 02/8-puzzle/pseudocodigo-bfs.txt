@@ -1,0 +1,20 @@
+Algoritmo BFS(Grafo, origem)
+    Entrada: 
+        Grafo representado por uma lista de adjacência
+        origem: vértice de início da busca
+    Saída:
+        Visita todos os vértices alcançáveis a partir da origem em ordem de nível
+
+    Criar uma fila vazia Q
+    Criar um conjunto ou vetor Visitado
+    
+    Marcar origem como visitado
+    Enfileirar origem em Q
+
+    Enquanto Q não estiver vazia:
+        u ← Desenfileirar Q
+        Para cada vizinho v de u em Grafo[u]:
+            Se v não foi visitado:
+                Marcar v como visitado
+                Enfileirar v em Q
+

@@ -1,0 +1,20 @@
+Algoritmo DFS_Iterativa(Grafo, origem)
+    Entrada: 
+        Grafo representado por uma lista de adjacência
+        origem: vértice de início da busca
+    Saída:
+        Visita todos os vértices alcançáveis a partir da origem em profundidade
+
+    Criar uma pilha vazia S
+    Criar um conjunto ou vetor Visitado
+    
+    Empilhar origem em S
+
+    Enquanto S não estiver vazia:
+        v ← Desempilhar S
+        Se v não foi visitado:
+            Marcar v como visitado
+            Para cada vizinho u de v em Grafo[v] (em ordem reversa, se necessário):
+                Se u não foi visitado:
+                    Empilhar u em S
+
