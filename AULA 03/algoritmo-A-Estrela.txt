@@ -1,0 +1,33 @@
+Pseudocódigo algoritmo A* (A Estrela)
+
+1. Coloque o nó nó_inicial na lista ABERTA com f(nó_inicial) = h(nó_inicial): inicialização
+2. Enquanto a lista ABERTA não estiver vazia {
+3. 	Retire da lista ABERTA o nó nó_atual com o menor valor de f()
+4. 	f(nó_atual) = g(nó_atual) + h(nó_atual)
+5. 	Se nó_atual for igual ao nó_objetivo, encontramos a solução; saia do loop
+6. 	Gere cada estado nó_sucessor que vem após nó_atual
+7. 	Para cada nó_sucessor de nó_atual {
+8. 		Defina custo_atual_sucessor = g(nó_atual) + w(nó_atual, nó_sucessor)
+9. 		Se nó_sucessor estiver na lista ABERTA {
+10.			Se g(nó_sucessor) ≤ custo_atual_sucessor, continue (para a linha 22)
+11.     	} 
+12.		Senão, se nó_sucessor estiver na lista FECHADA {
+13. 			Se g(nó_sucessor) ≤ custo_atual_sucessor, continue (para a linha 22)
+14. 				Mova nó_sucessor da lista FECHADA para a lista ABERTA
+15.     	} 
+16.		Senão {
+17. 			Adicione nó_sucessor à lista ABERTA
+18. 			Defina h(nó_sucessor) como sendo a distância heurística até o nó_objetivo
+19.     	}
+20.		Defina g(nó_sucessor) = custo_atual_sucessor
+21.		Defina o pai de nó_sucessor como nó_atual
+22. 	}
+23. 	Adicione nó_atual à lista FECHADA
+24. }
+25. Se (nó_atual != nó_objetivo), saia com erro (a lista ABERTA está vazia)
+
+ONDE: 	f() é a função de custo total estimado = f()=g()+h()
+ 	g() é a função de custo real até o nó. Ex.: g(B)=g(A)+custo(A,B)
+ 	h() é a função heurística (estimativa do custo até o objetivo)
+ 	w() é a função de custo de ir do nó atual para o nó sucessor
+
